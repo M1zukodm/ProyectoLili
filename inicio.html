@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Flores Amarillas para ti</title>
+    <link rel="icon" type="image/x-icon" href="source/floramarilla.ico">
+
+    <!-- Fuente de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url('source/fondo1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden; /* Evita que los corazones creen barras de desplazamiento */
+        }
+
+        h1 {
+            font-size: 3rem; 
+            margin: 0;
+            color: #ffafcc;
+            font-weight: 200;
+            background-color: #ffe5ec;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .btn-heart {
+            font-size: 18px;
+            padding: 10px 20px; 
+            background-color: #ff4081;
+            border: none;
+            color: white;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+            max-width: fit-content;
+            white-space: nowrap;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-heart i {
+            margin-left: 8px;
+        }
+
+        .btn-heart:hover {
+            background-color: #d52879;
+            transform: scale(1.05);
+        }
+
+        /* 🌟 Estilos para la lluvia de corazones */
+        .heart {
+            position: fixed;
+            top: -10px; /* Inicia fuera de la pantalla */
+            left: 50%;
+            font-size: 20px;
+            opacity: 0.8;
+            color: pink;
+            animation: fall linear infinite;
+            pointer-events: none; /* No interfiere con clics */
+        }
+
+        /* Animación de caída */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                padding: 8px 15px;
+            }
+
+            .btn-heart {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Feliz Día de las Flores Amarillas!</h1>
+    <a href="index.html" class="btn-heart">
+        Mira lo que hice para ti 
+        <i class="fa-solid fa-heart"></i>
+    </a>
+
+    <!-- 🌟 Script para la lluvia de corazones -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("span");
+            heart.classList.add("heart");
+            heart.innerHTML = "🩷"; // "💛" "🩷"  "🌸"
+            document.body.appendChild(heart);
+
+            // Posición aleatoria en el ancho de la pantalla
+            heart.style.left = Math.random() * 100 + "vw";
+
+            // Tamaño aleatorio de los corazones
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+
+            // Velocidad aleatoria de caída
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            // Elimina el corazón después de caer
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Generar corazones cada 300ms
+        setInterval(createHeart, 300);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
