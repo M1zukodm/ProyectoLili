@@ -8,6 +8,7 @@
 
 :root {
   --dark-color: #000;
+  --fondito: #ff686b;
 }
 
 body {
@@ -51,7 +52,7 @@ body {
 }
 
 .message {
-  background: #fce700;
+  background: #caf0f8;
   font-family: 'Pacifico', cursive;
   font-size: 30px;
   font-style: normal;
@@ -1379,18 +1380,20 @@ body {
 #home-button, 
 #tulipan-button,
 #girasol-button {
-    display: block;  /* Los pone en columna */
-    width: 150px;  /* Ancho fijo */
-    margin: 10px auto;  /* Espaciado entre botones y centrado */
-    padding: 10px 20px;
-    background-color: #ffafcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;  
+    height: 60px; 
+    margin: 10px auto;
+    background-color: #f7aef8;
     color: #000;
-    font-size: 16px;
+    font-size: 24px; 
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
     transition: 0.3s;
-    text-align: center;  /* Centra el texto */
+    text-align: center;
 }
 
 #home-button:hover, 
@@ -1399,7 +1402,17 @@ body {
     background-color: #bde0fe;
 }
 
-/* Posicionamos los botones correctamente */
+/* Ajuste específico para los iconos de flores */
+#tulipan-button span,
+#girasol-button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;  /* Ajusta el tamaño del icono */
+    line-height: 1; /* Corrige el centrado vertical */
+}
+
+/* Posicionamiento */
 #home-button {
     position: fixed;
     top: 20px;
@@ -1408,15 +1421,16 @@ body {
 
 #tulipan-button {
     position: fixed;
-    top: 70px;  /* Espacio debajo del home */
+    top: 90px;
     left: 20px;
 }
 
 #girasol-button {
     position: fixed;
-    top: 120px;  /* Espacio debajo del tulipán */
+    top: 160px;
     left: 20px;
 }
+
 
 .material-symbols-outlined {
   font-variation-settings:
