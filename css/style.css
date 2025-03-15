@@ -1379,7 +1379,8 @@ body {
 
 #home-button, 
 #tulipan-button,
-#girasol-button {
+#girasol-button,
+#sugar-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1398,7 +1399,8 @@ body {
 
 #home-button:hover, 
 #tulipan-button:hover, 
-#girasol-button:hover {
+#girasol-button:hover,
+#sugar-button:hover {
     background-color: #bde0fe;
 }
 
@@ -1408,27 +1410,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;  /* Ajusta el tamaño del icono */
-    line-height: 1; /* Corrige el centrado vertical */
+    font-size: 26px;  
+    line-height: 1; 
 }
 
-/* Posicionamiento */
-#home-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-}
+/* Posicionamiento en el lado izquierdo */
+#home-button { top: 20px; left: 20px; position: fixed; }
+#tulipan-button { top: 90px; left: 20px; position: fixed; }
+#girasol-button { top: 160px; left: 20px; position: fixed; }
 
-#tulipan-button {
+/* Posicionamiento en el lado derecho para el botón de Sugarboo */
+#sugar-button {
     position: fixed;
-    top: 90px;
-    left: 20px;
-}
-
-#girasol-button {
-    position: fixed;
-    top: 160px;
-    left: 20px;
+    top: 20px; /* Ajusta la posición vertical */
+    right: 20px; /* Lo coloca en la esquina derecha */
 }
 
 
